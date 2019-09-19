@@ -1,0 +1,2 @@
+# What does this do?
+This is an example of the go textmate syntax that has been pulled from the current atom implementation. This is made to be a hackable version of the syntax that can be published as a VS Code extension
