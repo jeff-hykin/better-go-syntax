@@ -1,0 +1,11 @@
+(using_atk_version): 1.0
+(project):
+    name: Better Go Syntax
+    description: A TM grammar that helps text editors color Go Lang code
+    
+    (commands):
+        build: ruby scripts/generate.rb
+        (setup): ruby scripts/setup.rb
+    
+    (paths):
+        project_root: ./
