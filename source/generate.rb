@@ -93,6 +93,21 @@ require_relative './tokens.rb'
                 end_pattern: @end_of_line,
             )
         ]
+    # 
+    # number literals
+    # 
+        grammar[:numeric_literals] = [
+            :float,
+            :integer,
+        ]
+        grammar[:float] = Pattern.new(
+            tag_as: "constant.numeric.floating-point",
+            match: /(\.\d+([Ee][-+]\d+)?i?)\b|\b\d+\.\d*(([Ee][-+]\d+)?i?\b)?/,
+        )
+        grammar[:integer] = Pattern.new(
+            tag_as: "constant.numeric.integer.go",
+            match: /\b((0x[0-9a-fA-F]+)|(0[0-7]+i?)|(\d+([Ee]\d+)?i?)|(\d+[Ee][-+]\d+i?))\b/,
+        )
  
 # Save (exports to json)
 grammar_as_hash = grammar.to_h(inherit_or_embedded: :embedded)

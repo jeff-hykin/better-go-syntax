@@ -147,14 +147,7 @@
             }
         },
         {
-            "comment": "Floating-point literals",
-            "match": "(\\.\\d+([Ee][-+]\\d+)?i?)\\b|\\b\\d+\\.\\d*(([Ee][-+]\\d+)?i?\\b)?",
-            "name": "constant.numeric.floating-point.go"
-        },
-        {
-            "comment": "Integers",
-            "match": "\\b((0x[0-9a-fA-F]+)|(0[0-7]+i?)|(\\d+([Ee]\\d+)?i?)|(\\d+[Ee][-+]\\d+i?))\\b",
-            "name": "constant.numeric.integer.go"
+            "include": "#numeric_literals"
         },
         {
             "comment": "Language constants",
