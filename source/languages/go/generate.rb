@@ -1,16 +1,13 @@
 require_relative '../../../directory'
 require_relative PathFor[:repo_helper]
 require_relative PathFor[:textmate_tools]
-require_relative PathFor[:sharedPattern]["numeric"]
-require_relative PathFor[:sharedPattern]["control_flow"]
-require_relative PathFor[:sharedPattern]["variable"]
 require_relative './tokens.rb'
 
 # 
 # Setup grammar
 # 
     Dir.chdir __dir__
-    original_grammar = JSON.parse(IO.read("original.tmlanguage.json"))
+    original_grammar = JSON.parse(IO.read("original.tmLanguage.json"))
     Grammar.convertSpecificIncludes(json_grammar: original_grammar, convert:["$self", "$base"], into: :$initial_context)
     grammar = Grammar.new(
         name: original_grammar["name"],
