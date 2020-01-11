@@ -135,19 +135,7 @@ end
 
 # 
 # export simplified
-# 
+#
+grammar_as_hash["scopeName"] = "source.go_simplified"
+grammar_as_hash["name"] = "go (simplified)"
 IO.write(PathFor[:simplifiedJsonSyntax ], JSON.pretty_generate(grammar_as_hash))
-
-package_json = JSON.parse(IO.read(PathFor[:package_json]))
-simplified_grammar_name = "go -- simplified"
-contribution_exists = package_json["contributes"]["grammars"].index do |each|
-    each["language"] == simplified_grammar_name
-end
-if contribution_exists == nil
-    package_json["contributes"]["grammars"].push({
-        "language" => simplified_grammar_name,
-        "scopeName": "source.go",
-        "path": PathFor[:simplifiedJsonSyntax].relative_path_from(PathFor[:root])
-    })
-end
-IO.write(PathFor[:package_json], JSON.pretty_generate(package_json))

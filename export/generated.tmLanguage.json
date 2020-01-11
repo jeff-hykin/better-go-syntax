@@ -129,6 +129,27 @@
       }
     },
     {
+      "comment": "Functions",
+      "match": "(\\bfunc\\b)|(\\w+)(?=\\()",
+      "captures": {
+        "1": {
+          "name": "keyword.function.go"
+        },
+        "2": {
+          "patterns": [
+            {
+              "match": "\\d\\w*",
+              "name": "invalid.illegal.identifier.go"
+            },
+            {
+              "match": "\\w+",
+              "name": "support.function.go"
+            }
+          ]
+        }
+      }
+    },
+    {
       "include": "#numeric_literals"
     },
     {
@@ -201,6 +222,35 @@
           "include": "#variables"
         }
       ]
+    },
+    {
+      "match": "(?<!var)\\s*(\\w+(?:\\.\\w+)*(?>,\\s*\\w+(?:\\.\\w+)*)*)(?=\\s*=(?!=))",
+      "captures": {
+        "1": {
+          "patterns": [
+            {
+              "match": "\\d\\w*",
+              "name": "invalid.illegal.identifier.go"
+            },
+            {
+              "match": "\\w+(?:\\.\\w+)*",
+              "name": "variable.other.assignment.go",
+              "captures": {
+                "0": {
+                  "patterns": [
+                    {
+                      "include": "#delimiters"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "include": "#delimiters"
+            }
+          ]
+        }
+      }
     },
     {
       "match": "\\w+(?:,\\s*\\w+)*(?=\\s*:=)",

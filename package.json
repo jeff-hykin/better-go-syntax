@@ -1,9 +1,9 @@
 {
-  "name": "better-syntax",
+  "name": "better-go-syntax",
   "displayName": "Better Go Syntax",
   "description": "A syntax improvement for go lang",
   "icon": "icon.png",
-  "version": "1.0.2",
+  "version": "1.0.10",
   "scripts": {
     "build": "ruby source/generate.rb",
     "publish": "npm run build && vsce publish"
@@ -24,16 +24,29 @@
   },
   "publisher": "jeff-hykin",
   "contributes": {
+    "languages": [
+      {
+        "id": "go (simplified)",
+        "aliases": [
+          "Go (simplified)",
+          "go (simplified)"
+        ],
+        "extensions": [
+            ".go_simplified"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
     "grammars": [
       {
         "language": "go",
         "scopeName": "source.go",
-        "path": "source/generated.tmLanguage.json"
+        "path": "./export/generated.tmLanguage.json"
       },
       {
-        "language": "go -- simplified",
-        "scopeName": "source.go",
-        "path": "source/simplified.tmLanguage.json"
+        "language": "go (simplified)",
+        "scopeName": "source.go_simplified",
+        "path": "./export/simplified.tmLanguage.json"
       }
     ]
   },
