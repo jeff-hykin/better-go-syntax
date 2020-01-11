@@ -109,7 +109,41 @@ require_relative './tokens.rb'
             match: /\b((0x[0-9a-fA-F]+)|(0[0-7]+i?)|(\d+([Ee]\d+)?i?)|(\d+[Ee][-+]\d+i?))\b/,
         )
  
-# Save (exports to json)
+
+# 
+# export main grammar to json
+# 
 grammar_as_hash = grammar.to_h(inherit_or_embedded: :embedded)
 IO.write(PathFor[:jsonSyntax ], JSON.pretty_generate(grammar_as_hash))
 IO.write(PathFor[:languageTag], grammar.all_tags.to_a.sort.join("\n"))
+
+# 
+# 
+# generate safe/simplified grammar
+#
+# 
+
+# 
+# patterns to remove
+# 
+grammar_as_hash["patterns"].delete_if do |each_pattern|
+    should_delete = false
+    should_delete = true if each_pattern["match"] == "(?<!var)\\s*(\\w+(?:\\.\\w+)*(?>,\\s*\\w+(?:\\.\\w+)*)*)(?=\\s*=(?!=))"
+    should_delete = true if each_pattern["match"] == "(\\bfunc\\b)|(\\w+)(?=\\()"
+    should_delete
+end
+
+# 
+# export simplified
+# 
+IO.write(PathFor[:simplifiedJsonSyntax ], JSON.pretty_generate(grammar_as_hash))
+
+package_json = JSON.parse(IO.read(File.join(PathFor[:root], "./package.json")))
+simplified_grammar_name = "go -- simplified"
+if package_json["contributes"]["grammars"].index(simplified_grammar_name) == nil
+    package_json["contributes"]["grammars"].push({
+        "language" => simplified_grammar_name,
+        "scopeName": "source.go",
+        "path": PathFor[:simplifiedJsonSyntax]
+    })
+end
