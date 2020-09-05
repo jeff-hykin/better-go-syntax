@@ -6,7 +6,8 @@
   "version": "1.0.10",
   "scripts": {
     "build": "ruby source/generate.rb",
-    "publish": "npm run build && vsce publish"
+    "publish": "npm run build && vsce publish",
+    "postinstall": "bundle install"
   },
   "keywords": [
     "syntax",
@@ -32,7 +33,7 @@
           "go (simplified)"
         ],
         "extensions": [
-            ".go_simplified"
+          ".go_simplified"
         ],
         "configuration": "./language-configuration.json"
       }
@@ -74,6 +75,5 @@
     "vscode-textmate": "^4.1.1",
     "yargs": "^13.2.2"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }

@@ -28,13 +28,16 @@ require_relative './tokens.rb'
 # Contexts
 #
 #
+    # the context that the grammar starts off in,
+    # (e.g. context's change ex: between the quotes of a string, the string context is used instead of the initial context)
     # this is equivlent to setting the {"patterns":[]} in the json file
     grammar[:$initial_context] = [
-            # put new/updated patterns here
-            :comments, # see below for the implementation of comments
-            # spreads all the original patterns and puts them in this array
-            *original_grammar["patterns"],
-        ]
+        # put new/updated patterns here
+        :comments, # see :comments below for the implementation
+        
+        # spreads all the original patterns (from original.json) and puts them in this array
+        *original_grammar["patterns"],
+    ]
 #
 #
 # Patterns
@@ -124,18 +127,24 @@ IO.write(PathFor[:languageTag], grammar.all_tags.to_a.sort.join("\n"))
 # 
 
 # 
-# patterns to remove
+# patterns  to remove
 # 
+    # some patterns in the original.json cause problems
+    # however, we don't want to remove them from the original.json file
+    # (then it wouldn't be the original anymore, and it would be hard to revert back to the original)
+    # so instead, we find specific patterns and remove them here
 grammar_as_hash["patterns"].delete_if do |each_pattern|
     should_delete = false
     should_delete = true if each_pattern["match"] == "(?<!var)\\s*(\\w+(?:\\.\\w+)*(?>,\\s*\\w+(?:\\.\\w+)*)*)(?=\\s*=(?!=))"
     should_delete = true if each_pattern["match"] == "(\\bfunc\\b)|(\\w+)(?=\\()"
+    # in ruby the last value is returned (AKA return should_delete)
     should_delete
 end
 
 # 
 # export simplified
 #
+    # this version doesn't match as much, but it also has less problems
 grammar_as_hash["scopeName"] = "source.go_simplified"
 grammar_as_hash["name"] = "go (simplified)"
 IO.write(PathFor[:simplifiedJsonSyntax ], JSON.pretty_generate(grammar_as_hash))
