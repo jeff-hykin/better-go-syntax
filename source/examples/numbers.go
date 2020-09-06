@@ -7,7 +7,7 @@ var Ints = []int{
 	0B1110,
 	0b_1000_0001,
 
-	//octal
+	// octal
 	0o0,
 	0o1234,
 	0O1234,
