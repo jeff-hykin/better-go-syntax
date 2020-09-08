@@ -3,48 +3,48 @@ def go_numeric_constant()
     valid_single_character = /(?:[0-9a-zA-Z_\.])/
     valid_after_exponent = lookBehindFor(/[eEpP]/).then(/[+-]/)
     valid_character = valid_single_character.or(valid_after_exponent)
-    end_pattern = /$/
+    end_pattern = @end_of_line
     
-    number_separator_pattern = newPattern(
+    number_separator_pattern = Pattern.new(
         match: lookBehindFor(/[0-9a-fA-F]/).then(/#{separator}/).lookAheadFor(/[0-9a-fA-F]/),
         tag_as:"punctuation.separator.constant.numeric",
         )
 
-    hex_digits = newPattern(
+    hex_digits = Pattern.new(
         match: /[0-9a-fA-F]/.zeroOrMoreOf(/[0-9a-fA-F]/.or(number_separator_pattern)),
         tag_as: "constant.numeric.hexadecimal",
         includes: [ number_separator_pattern ],
         )
-    decimal_digits = newPattern(
+    decimal_digits = Pattern.new(
         match: /[0-9]/.zeroOrMoreOf(/[0-9]/.or(number_separator_pattern)),
         tag_as: "constant.numeric.decimal",
         includes: [ number_separator_pattern ],
         )
-    octal_digits = newPattern(
+    octal_digits = Pattern.new(
         match: oneOrMoreOf(/[0-7]/.or(number_separator_pattern)),
         tag_as: "constant.numeric.octal",
         includes: [ number_separator_pattern ],
         )
-    binary_digits = newPattern(
+    binary_digits = Pattern.new(
         match: /[01]/.zeroOrMoreOf(/[01]/.or(number_separator_pattern)),
         tag_as: "constant.numeric.binary",
         includes: [ number_separator_pattern ],
         )
 
-    hex_prefix = newPattern(
+    hex_prefix = Pattern.new(
         match: /\G/.then(/0[xX]/),
         tag_as: "keyword.other.unit.hexadecimal",
         )
-    octal_prefix = newPattern(
+    octal_prefix = Pattern.new(
         # The anchor \G matches at the position where the previous match ended.
         match: /\G/.then(/0/).maybe(/[oO]/),
         tag_as: "keyword.other.unit.octal",
         )
-    binary_prefix = newPattern(
+    binary_prefix = Pattern.new(
         match: /\G/.then(/0[bB]/),
         tag_as: "keyword.other.unit.binary",
         )
-    decimal_prefix = newPattern(
+    decimal_prefix = Pattern.new(
         match: /\G/.lookAheadFor(/[0-9.]/).lookAheadToAvoid(/0[xXbBoO]/),
         )
 
@@ -53,7 +53,7 @@ def go_numeric_constant()
         tag_as:"keyword.other.unit.imaginary",
     )
 
-    hex_exponent = newPattern(
+    hex_exponent = Pattern.new(
         match: lookBehindToAvoid(/#{separator}/).then(
                 match: /[pP]/,
                 tag_as: "keyword.other.unit.exponent.hexadecimal",
@@ -69,7 +69,7 @@ def go_numeric_constant()
                 includes: [ number_separator_pattern ]
             ),
         )
-    decimal_exponent = newPattern(
+    decimal_exponent = Pattern.new(
         match: lookBehindToAvoid(/#{separator}/).then(
                 match: /[eE]/,
                 tag_as: "keyword.other.unit.exponent.decimal",
@@ -85,12 +85,12 @@ def go_numeric_constant()
                 includes: [ number_separator_pattern ]
             ),
         )
-    hex_point = newPattern(
+    hex_point = Pattern.new(
         # lookBehind/Ahead because there needs to be a hex digit on at least one side
         match: lookBehindFor(/[0-9a-fA-F]/).then(/\./).or(/\./.lookAheadFor(/[0-9a-fA-F]/)),
         tag_as: "constant.numeric.hexadecimal",
         )
-    decimal_point = newPattern(
+    decimal_point = Pattern.new(
         # lookBehind/Ahead because there needs to be a decimal digit on at least one side
         match: lookBehindFor(/[0-9]/).then(/\./).or(/\./.lookAheadFor(/[0-9]/)),
         tag_as: "constant.numeric.decimal.point",
@@ -111,7 +111,7 @@ def go_numeric_constant()
     hex_lit     = hex_prefix.maybe(/#{separator}/).then(hex_digits).maybe(imaginary_suffix).then(hex_ending)
 
     # int_lit = decimal_lit | binary_lit | octal_lit | hex_lit
-    int_lit = newPattern(
+    int_lit = Pattern.new(
         match: decimal_lit.or(binary_lit).or(octal_lit).or(hex_lit),
         should_fully_match: [
             "42", "4_2", "0600", "0_600", "0o600", "0O600", "0xBadFace", "0xBad_Face", "0x_67_7a_2f_cc_40_c6",
@@ -136,7 +136,7 @@ def go_numeric_constant()
     hex_float_lit2 = hex_prefix.maybe(/#{separator}/).then(hex_digits)                                  .then(hex_exponent).maybe(imaginary_suffix).then(hex_ending)
     hex_float_lit3 = hex_prefix                                       .then(hex_point).then( hex_digits).then(hex_exponent).maybe(imaginary_suffix).then(hex_ending)
    
-    float_lit = newPattern(
+    float_lit = Pattern.new(
         match: decimal_float_lit1.or(decimal_float_lit2).or(decimal_float_lit3).or(hex_float_lit1).or(hex_float_lit2).or(hex_float_lit3),
         should_fully_match: [
             "0.", "72.40", "072.40", "2.71828", "1.e+0", "6.67428e-11", ".25", ".12345E+5", "1_5.", "0.15e+0_2",
@@ -159,7 +159,7 @@ def go_numeric_constant()
             #  : imaginary number handling was combined with other *_lit rules by checking `maybe(imaginary_suffix)` before ending.
 
             # invalid
-            newPattern(
+            Pattern.new(
                 match: oneOrMoreOf(valid_single_character.or(valid_after_exponent)),
                 tag_as: "invalid.illegal.constant.numeric"
             ),
