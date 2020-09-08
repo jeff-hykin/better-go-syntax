@@ -153,23 +153,16 @@ def go_numeric_constant()
     return Pattern.new(
         match: lookBehindToAvoid(/\w/).then(/\.?\d/).zeroOrMoreOf(valid_character),
         includes: [
-            PatternRange.new(
-                start_pattern: lookAheadFor(/./),
-                end_pattern: end_pattern,
-                # only a single include pattern should match
-                includes: [
-                    float_lit,
-                    int_lit,
-                    # imaginary_lit = (decimal_digits | int_lit | float_lit) "i" .
-                    #  : imaginary number handling was combined with other *_lit rules by checking `maybe(imaginary_suffix)` before ending.
+            float_lit,
+            int_lit,
+            # imaginary_lit = (decimal_digits | int_lit | float_lit) "i" .
+            #  : imaginary number handling was combined with other *_lit rules by checking `maybe(imaginary_suffix)` before ending.
 
-                    # invalid
-                    newPattern(
-                        match: oneOrMoreOf(valid_single_character.or(valid_after_exponent)),
-                        tag_as: "invalid.illegal.constant.numeric"
-                    )
-                ]
-            )
+            # invalid
+            newPattern(
+                match: oneOrMoreOf(valid_single_character.or(valid_after_exponent)),
+                tag_as: "invalid.illegal.constant.numeric"
+            ),
         ],
     )
 end
