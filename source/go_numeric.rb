@@ -176,15 +176,27 @@ def go_numeric_constant()
     return Pattern.new(
         match: lookBehindToAvoid(/\w/).then(/\.?\d/).zeroOrMoreOf(valid_character),
         includes: [
-            float_lit,
-            int_lit,
-            # imaginary_lit = (decimal_digits | int_lit | float_lit) "i" .
-            #  : imaginary number handling was combined with other *_lit rules by checking `maybe(imaginary_suffix)` before ending.
+            # NOTE: this PatternRange.new should be redundant, it makes no sense
+            #       thats because there's a desireable edgecase behavior we want
+            #       \G (as used above) matches the begining of the Range, and it only
+            #       works for Ranges. So we find a pattern, then capture everything 
+            #       inside that pattern with a range so that the begining of the pattern can be matched
+            PatternRange.new(
+                start_pattern: lookAheadFor(/./),
+                end_pattern: end_pattern,
+                # only a single include pattern should match
+                includes: [
+                    float_lit,
+                    int_lit,
+                    # imaginary_lit = (decimal_digits | int_lit | float_lit) "i" .
+                    #  : imaginary number handling was combined with other *_lit rules by checking `maybe(imaginary_suffix)` before ending.
 
-            # invalid
-            Pattern.new(
-                match: oneOrMoreOf(valid_single_character.or(valid_after_exponent)),
-                tag_as: "invalid.illegal.constant.numeric"
+                    # invalid
+                    Pattern.new(
+                        match: oneOrMoreOf(valid_single_character.or(valid_after_exponent)),
+                        tag_as: "invalid.illegal.constant.numeric"
+                    ),
+                ]
             ),
         ],
     )
