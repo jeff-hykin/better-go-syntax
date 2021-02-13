@@ -55,7 +55,7 @@
     "Programming Languages"
   ],
   "repository": {
-    "url": "https://github.com/jeff-hykin/cpp-textmate-grammer",
+    "url": "https://github.com/jeff-hykin/better-go-syntax",
     "type": "git"
   },
   "devDependencies": {
