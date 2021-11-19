@@ -58,24 +58,6 @@
             ]
         },
         {
-            "comment": "Syntax error receiving channels",
-            "match": "<\\-([\\t ]+)chan\\b",
-            "captures": {
-                "1": {
-                    "name": "invalid.illegal.receive-channel.go"
-                }
-            }
-        },
-        {
-            "comment": "Syntax error sending channels",
-            "match": "\\bchan([\\t ]+)<-",
-            "captures": {
-                "1": {
-                    "name": "invalid.illegal.send-channel.go"
-                }
-            }
-        },
-        {
             "comment": "Syntax error using slices",
             "match": "\\[\\](\\s+)",
             "captures": {
