@@ -1,0 +1,1003 @@
+- source: package
+  scopes:
+    - keyword.package
+- source: main
+  scopes:
+    - entity.name.package
+- source: var
+  scopes:
+    - keyword.var
+- source: Ints
+  scopes:
+    - variable.other.assignment
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: '['
+  scopesBegin:
+    - punctuation.definition.bracket.square
+- source: ']'
+  scopesEnd:
+    - punctuation.definition.bracket.square
+- source: int
+  scopes:
+    - storage.type.numeric
+- source: '{'
+  scopes:
+    - punctuation.definition.begin.bracket.curly
+- source: //
+  scopesBegin:
+    - comment.line.double-slash
+  scopes:
+    - punctuation.definition.comment
+- source: ' binary'
+  scopesEnd:
+    - comment.line.double-slash
+- source: 0b
+  scopes:
+    - keyword.other.unit.binary
+- source: '0'
+  scopes:
+    - constant.numeric.binary
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: 0b
+  scopes:
+    - keyword.other.unit.binary
+- source: '1010'
+  scopes:
+    - constant.numeric.binary
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: 0B
+  scopes:
+    - keyword.other.unit.binary
+- source: '1110'
+  scopes:
+    - constant.numeric.binary
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: 0b
+  scopes:
+    - keyword.other.unit.binary
+- source: _
+- source: '1000'
+  scopesBegin:
+    - constant.numeric.binary
+- source: _
+  scopes:
+    - punctuation.separator.constant.numeric
+- source: '0001'
+  scopesEnd:
+    - constant.numeric.binary
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: //
+  scopesBegin:
+    - comment.line.double-slash
+  scopes:
+    - punctuation.definition.comment
+- source: ' octal'
+  scopesEnd:
+    - comment.line.double-slash
+- source: 0o
+  scopes:
+    - keyword.other.unit.octal
+- source: '0'
+  scopes:
+    - constant.numeric.octal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: 0o
+  scopes:
+    - keyword.other.unit.octal
+- source: '1234'
+  scopes:
+    - constant.numeric.octal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: 0O
+  scopes:
+    - keyword.other.unit.octal
+- source: '1234'
+  scopes:
+    - constant.numeric.octal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: 0o
+  scopes:
+    - keyword.other.unit.octal
+- source: _
+- source: '600'
+  scopes:
+    - constant.numeric.octal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '00'
+  scopes:
+    - constant.numeric.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '01234'
+  scopes:
+    - constant.numeric.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '01234'
+  scopes:
+    - constant.numeric.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '0'
+  scopesBegin:
+    - constant.numeric.decimal
+- source: _
+  scopes:
+    - punctuation.separator.constant.numeric
+- source: '466'
+  scopesEnd:
+    - constant.numeric.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: //
+  scopesBegin:
+    - comment.line.double-slash
+  scopes:
+    - punctuation.definition.comment
+- source: ' decimal'
+  scopesEnd:
+    - comment.line.double-slash
+- source: '1'
+  scopes:
+    - constant.numeric.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '1234'
+  scopes:
+    - constant.numeric.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '1'
+  scopesBegin:
+    - constant.numeric.decimal
+- source: _
+  scopes:
+    - punctuation.separator.constant.numeric
+- source: '000'
+  scopesEnd:
+    - constant.numeric.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '1'
+  scopesBegin:
+    - constant.numeric.decimal
+- source: _
+  scopes:
+    - punctuation.separator.constant.numeric
+- source: '000'
+- source: _
+  scopes:
+    - punctuation.separator.constant.numeric
+- source: '000'
+  scopesEnd:
+    - constant.numeric.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: //
+  scopesBegin:
+    - comment.line.double-slash
+  scopes:
+    - punctuation.definition.comment
+- source: ' hexadecimal'
+  scopesEnd:
+    - comment.line.double-slash
+- source: 0x
+  scopes:
+    - keyword.other.unit.hexadecimal
+- source: '0'
+  scopes:
+    - constant.numeric.hexadecimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: 0x
+  scopes:
+    - keyword.other.unit.hexadecimal
+- source: '1234'
+  scopes:
+    - constant.numeric.hexadecimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: 0x
+  scopes:
+    - keyword.other.unit.hexadecimal
+- source: cafef00d
+  scopes:
+    - constant.numeric.hexadecimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: 0X
+  scopes:
+    - keyword.other.unit.hexadecimal
+- source: CAFEF00D
+  scopes:
+    - constant.numeric.hexadecimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: 0X
+  scopes:
+    - keyword.other.unit.hexadecimal
+- source: CA
+  scopesBegin:
+    - constant.numeric.hexadecimal
+- source: _
+  scopes:
+    - punctuation.separator.constant.numeric
+- source: FE
+- source: _
+  scopes:
+    - punctuation.separator.constant.numeric
+- source: F0
+- source: _
+  scopes:
+    - punctuation.separator.constant.numeric
+- source: 0D
+  scopesEnd:
+    - constant.numeric.hexadecimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '}'
+  scopes:
+    - punctuation.definition.end.bracket.curly
+- source: var
+  scopes:
+    - keyword.var
+- source: Complex
+  scopes:
+    - variable.other.assignment
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: '['
+  scopesBegin:
+    - punctuation.definition.bracket.square
+- source: ']'
+  scopesEnd:
+    - punctuation.definition.bracket.square
+- source: complex64
+  scopes:
+    - storage.type.numeric
+- source: '{'
+  scopes:
+    - punctuation.definition.begin.bracket.curly
+- source: 0b
+  scopes:
+    - keyword.other.unit.binary
+- source: '10'
+  scopes:
+    - constant.numeric.binary
+- source: i
+  scopes:
+    - keyword.other.unit.imaginary
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: 0o
+  scopes:
+    - keyword.other.unit.octal
+- source: '10'
+  scopes:
+    - constant.numeric.octal
+- source: i
+  scopes:
+    - keyword.other.unit.imaginary
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '010'
+  scopes:
+    - constant.numeric.decimal
+- source: i
+  scopes:
+    - keyword.other.unit.imaginary
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '0'
+  scopes:
+    - constant.numeric.decimal
+- source: i
+  scopes:
+    - keyword.other.unit.imaginary
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '678'
+  scopes:
+    - constant.numeric.decimal
+- source: i
+  scopes:
+    - keyword.other.unit.imaginary
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: 0x
+  scopes:
+    - keyword.other.unit.hexadecimal
+- source: f00
+  scopes:
+    - constant.numeric.hexadecimal
+- source: i
+  scopes:
+    - keyword.other.unit.imaginary
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: 0b
+  scopes:
+    - keyword.other.unit.binary
+- source: '1'
+  scopesBegin:
+    - constant.numeric.binary
+- source: _
+  scopes:
+    - punctuation.separator.constant.numeric
+- source: '0'
+  scopesEnd:
+    - constant.numeric.binary
+- source: i
+  scopes:
+    - keyword.other.unit.imaginary
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: 0o1_0i
+  scopes:
+    - invalid.illegal.constant.numeric
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '01'
+  scopesBegin:
+    - constant.numeric.decimal
+- source: _
+  scopes:
+    - punctuation.separator.constant.numeric
+- source: '0'
+  scopesEnd:
+    - constant.numeric.decimal
+- source: i
+  scopes:
+    - keyword.other.unit.imaginary
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '0'
+  scopes:
+    - constant.numeric.decimal
+- source: i
+  scopes:
+    - keyword.other.unit.imaginary
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '67'
+  scopesBegin:
+    - constant.numeric.decimal
+- source: _
+  scopes:
+    - punctuation.separator.constant.numeric
+- source: '8'
+  scopesEnd:
+    - constant.numeric.decimal
+- source: i
+  scopes:
+    - keyword.other.unit.imaginary
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: 0x
+  scopes:
+    - keyword.other.unit.hexadecimal
+- source: ff
+  scopesBegin:
+    - constant.numeric.hexadecimal
+- source: _
+  scopes:
+    - punctuation.separator.constant.numeric
+- source: '00'
+  scopesEnd:
+    - constant.numeric.hexadecimal
+- source: i
+  scopes:
+    - keyword.other.unit.imaginary
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '0'
+  scopes:
+    - constant.numeric.decimal
+- source: .
+  scopes:
+    - constant.numeric.decimal.point
+- source: i
+  scopes:
+    - keyword.other.unit.imaginary
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: .
+  scopes:
+    - constant.numeric.decimal.point
+- source: '123'
+  scopes:
+    - constant.numeric.decimal
+- source: i
+  scopes:
+    - keyword.other.unit.imaginary
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '123'
+  scopes:
+    - constant.numeric.decimal
+- source: .
+  scopes:
+    - constant.numeric.decimal.point
+- source: '123'
+  scopes:
+    - constant.numeric.decimal
+- source: i
+  scopes:
+    - keyword.other.unit.imaginary
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '123'
+  scopes:
+    - constant.numeric.decimal
+- source: e
+  scopes:
+    - keyword.other.unit.exponent.decimal
+- source: +
+  scopes:
+    - keyword.operator.plus.exponent.decimal
+- source: '0'
+  scopes:
+    - constant.numeric.exponent.decimal
+- source: i
+  scopes:
+    - keyword.other.unit.imaginary
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '123'
+  scopes:
+    - constant.numeric.decimal
+- source: .
+  scopes:
+    - constant.numeric.decimal.point
+- source: E
+  scopes:
+    - keyword.other.unit.exponent.decimal
+- source: '-'
+  scopes:
+    - keyword.operator.minus.exponent.decimal
+- source: '10'
+  scopes:
+    - constant.numeric.exponent.decimal
+- source: i
+  scopes:
+    - keyword.other.unit.imaginary
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: .
+  scopes:
+    - constant.numeric.decimal.point
+- source: '123'
+  scopes:
+    - constant.numeric.decimal
+- source: E
+  scopes:
+    - keyword.other.unit.exponent.decimal
+- source: +
+  scopes:
+    - keyword.operator.plus.exponent.decimal
+- source: '10'
+  scopes:
+    - constant.numeric.exponent.decimal
+- source: i
+  scopes:
+    - keyword.other.unit.imaginary
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '}'
+  scopes:
+    - punctuation.definition.end.bracket.curly
+- source: var
+  scopes:
+    - keyword.var
+- source: Float
+  scopes:
+    - variable.other.assignment
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: '['
+  scopesBegin:
+    - punctuation.definition.bracket.square
+- source: ']'
+  scopesEnd:
+    - punctuation.definition.bracket.square
+- source: float64
+  scopes:
+    - storage.type.numeric
+- source: '{'
+  scopes:
+    - punctuation.definition.begin.bracket.curly
+- source: '0'
+  scopes:
+    - constant.numeric.decimal
+- source: .
+  scopes:
+    - constant.numeric.decimal.point
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '123'
+  scopes:
+    - constant.numeric.decimal
+- source: .
+  scopes:
+    - constant.numeric.decimal.point
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '0123'
+  scopes:
+    - constant.numeric.decimal
+- source: .
+  scopes:
+    - constant.numeric.decimal.point
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: .
+  scopes:
+    - constant.numeric.decimal.point
+- source: '0'
+  scopes:
+    - constant.numeric.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: .
+  scopes:
+    - constant.numeric.decimal.point
+- source: '123'
+  scopes:
+    - constant.numeric.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: .
+  scopes:
+    - constant.numeric.decimal.point
+- source: '0123'
+  scopes:
+    - constant.numeric.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '0'
+  scopes:
+    - constant.numeric.decimal
+- source: .
+  scopes:
+    - constant.numeric.decimal.point
+- source: '0'
+  scopes:
+    - constant.numeric.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '123'
+  scopes:
+    - constant.numeric.decimal
+- source: .
+  scopes:
+    - constant.numeric.decimal.point
+- source: '123'
+  scopes:
+    - constant.numeric.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '0123'
+  scopes:
+    - constant.numeric.decimal
+- source: .
+  scopes:
+    - constant.numeric.decimal.point
+- source: '0123'
+  scopes:
+    - constant.numeric.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '0'
+  scopes:
+    - constant.numeric.decimal
+- source: e
+  scopes:
+    - keyword.other.unit.exponent.decimal
+- source: '0'
+  scopes:
+    - constant.numeric.exponent.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '123'
+  scopes:
+    - constant.numeric.decimal
+- source: e
+  scopes:
+    - keyword.other.unit.exponent.decimal
+- source: +
+  scopes:
+    - keyword.operator.plus.exponent.decimal
+- source: '0'
+  scopes:
+    - constant.numeric.exponent.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '0123'
+  scopes:
+    - constant.numeric.decimal
+- source: E
+  scopes:
+    - keyword.other.unit.exponent.decimal
+- source: '-'
+  scopes:
+    - keyword.operator.minus.exponent.decimal
+- source: '1'
+  scopes:
+    - constant.numeric.exponent.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '0'
+  scopes:
+    - constant.numeric.decimal
+- source: .
+  scopes:
+    - constant.numeric.decimal.point
+- source: e
+  scopes:
+    - keyword.other.unit.exponent.decimal
+- source: +
+  scopes:
+    - keyword.operator.plus.exponent.decimal
+- source: '1'
+  scopes:
+    - constant.numeric.exponent.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '123'
+  scopes:
+    - constant.numeric.decimal
+- source: .
+  scopes:
+    - constant.numeric.decimal.point
+- source: E
+  scopes:
+    - keyword.other.unit.exponent.decimal
+- source: '-'
+  scopes:
+    - keyword.operator.minus.exponent.decimal
+- source: '10'
+  scopes:
+    - constant.numeric.exponent.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '0123'
+  scopes:
+    - constant.numeric.decimal
+- source: .
+  scopes:
+    - constant.numeric.decimal.point
+- source: e
+  scopes:
+    - keyword.other.unit.exponent.decimal
+- source: '123'
+  scopes:
+    - constant.numeric.exponent.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: .
+  scopes:
+    - constant.numeric.decimal.point
+- source: '0'
+  scopes:
+    - constant.numeric.decimal
+- source: e
+  scopes:
+    - keyword.other.unit.exponent.decimal
+- source: '-'
+  scopes:
+    - keyword.operator.minus.exponent.decimal
+- source: '1'
+  scopes:
+    - constant.numeric.exponent.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: .
+  scopes:
+    - constant.numeric.decimal.point
+- source: '123'
+  scopes:
+    - constant.numeric.decimal
+- source: E
+  scopes:
+    - keyword.other.unit.exponent.decimal
+- source: +
+  scopes:
+    - keyword.operator.plus.exponent.decimal
+- source: '10'
+  scopes:
+    - constant.numeric.exponent.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: .
+  scopes:
+    - constant.numeric.decimal.point
+- source: '0123'
+  scopes:
+    - constant.numeric.decimal
+- source: E
+  scopes:
+    - keyword.other.unit.exponent.decimal
+- source: '123'
+  scopes:
+    - constant.numeric.exponent.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '0'
+  scopes:
+    - constant.numeric.decimal
+- source: .
+  scopes:
+    - constant.numeric.decimal.point
+- source: '0'
+  scopes:
+    - constant.numeric.decimal
+- source: e
+  scopes:
+    - keyword.other.unit.exponent.decimal
+- source: '1'
+  scopes:
+    - constant.numeric.exponent.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '123'
+  scopes:
+    - constant.numeric.decimal
+- source: .
+  scopes:
+    - constant.numeric.decimal.point
+- source: '123'
+  scopes:
+    - constant.numeric.decimal
+- source: E
+  scopes:
+    - keyword.other.unit.exponent.decimal
+- source: '-'
+  scopes:
+    - keyword.operator.minus.exponent.decimal
+- source: '10'
+  scopes:
+    - constant.numeric.exponent.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '0123'
+  scopes:
+    - constant.numeric.decimal
+- source: .
+  scopes:
+    - constant.numeric.decimal.point
+- source: '0123'
+  scopes:
+    - constant.numeric.decimal
+- source: e
+  scopes:
+    - keyword.other.unit.exponent.decimal
+- source: +
+  scopes:
+    - keyword.operator.plus.exponent.decimal
+- source: '40'
+  scopes:
+    - constant.numeric.exponent.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: 0x
+  scopes:
+    - keyword.other.unit.hexadecimal
+- source: '0'
+  scopes:
+    - constant.numeric.hexadecimal
+- source: p
+  scopes:
+    - keyword.other.unit.exponent.hexadecimal
+- source: '0'
+  scopes:
+    - constant.numeric.exponent.hexadecimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: 0x
+  scopes:
+    - keyword.other.unit.hexadecimal
+- source: 12ef
+  scopes:
+    - constant.numeric.hexadecimal
+- source: p
+  scopes:
+    - keyword.other.unit.exponent.hexadecimal
+- source: '-'
+  scopes:
+    - keyword.operator.minus.exponent.hexadecimal
+- source: '123'
+  scopes:
+    - constant.numeric.exponent.hexadecimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: 0x
+  scopes:
+    - keyword.other.unit.hexadecimal
+- source: ABCD
+  scopesBegin:
+    - constant.numeric.hexadecimal
+- source: .
+  scopesEnd:
+    - constant.numeric.hexadecimal
+- source: p
+  scopes:
+    - keyword.other.unit.exponent.hexadecimal
+- source: +
+  scopes:
+    - keyword.operator.plus.exponent.hexadecimal
+- source: '0'
+  scopes:
+    - constant.numeric.exponent.hexadecimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: 0x
+  scopes:
+    - keyword.other.unit.hexadecimal
+- source: .
+  scopesBegin:
+    - constant.numeric.hexadecimal
+- source: 0189
+  scopesEnd:
+    - constant.numeric.hexadecimal
+- source: P
+  scopes:
+    - keyword.other.unit.exponent.hexadecimal
+- source: '-'
+  scopes:
+    - keyword.operator.minus.exponent.hexadecimal
+- source: '0'
+  scopes:
+    - constant.numeric.exponent.hexadecimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: 0x
+  scopes:
+    - keyword.other.unit.hexadecimal
+- source: '1'
+  scopesBegin:
+    - constant.numeric.hexadecimal
+- source: .
+- source: ffff
+  scopesEnd:
+    - constant.numeric.hexadecimal
+- source: p
+  scopes:
+    - keyword.other.unit.exponent.hexadecimal
+- source: +
+  scopes:
+    - keyword.operator.plus.exponent.hexadecimal
+- source: '1023'
+  scopes:
+    - constant.numeric.exponent.hexadecimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '1'
+  scopesBegin:
+    - constant.numeric.decimal
+- source: _
+  scopes:
+    - punctuation.separator.constant.numeric
+- source: '000'
+  scopesEnd:
+    - constant.numeric.decimal
+- source: .
+  scopes:
+    - constant.numeric.decimal.point
+- source: '000'
+  scopesBegin:
+    - constant.numeric.decimal
+- source: _
+  scopes:
+    - punctuation.separator.constant.numeric
+- source: '1'
+  scopesEnd:
+    - constant.numeric.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: 0x
+  scopes:
+    - keyword.other.unit.hexadecimal
+- source: _
+- source: f00d
+  scopesBegin:
+    - constant.numeric.hexadecimal
+- source: .
+- source: '0'
+  scopesEnd:
+    - constant.numeric.hexadecimal
+- source: p
+  scopes:
+    - keyword.other.unit.exponent.hexadecimal
+- source: '1'
+  scopesBegin:
+    - constant.numeric.exponent.hexadecimal
+- source: _
+  scopes:
+    - punctuation.separator.constant.numeric
+- source: '2'
+  scopesEnd:
+    - constant.numeric.exponent.hexadecimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '}'
+  scopes:
+    - punctuation.definition.end.bracket.curly

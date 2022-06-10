@@ -83,6 +83,5 @@ string.quoted.double.go
 string.quoted.raw.go
 string.quoted.rune.go
 support.function.builtin.go
-support.function.go
 variable.other.assignment.go
 variable.other.declaration.go

@@ -1,0 +1,857 @@
+- source: package
+  scopes:
+    - keyword.package
+- source: main
+  scopes:
+    - entity.name.package
+- source: //
+  scopesBegin:
+    - comment.line.double-slash
+  scopes:
+    - punctuation.definition.comment
+- source: ' Basic function declarations'
+  scopesEnd:
+    - comment.line.double-slash
+- source: func
+  scopes:
+    - keyword.function
+- source: ReturnOne
+  scopes:
+    - entity.name.function
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: int
+  scopes:
+    - storage.type.numeric
+- source: '{'
+  scopes:
+    - punctuation.definition.begin.bracket.curly
+- source: return
+  scopes:
+    - keyword.control
+- source: '0'
+  scopes:
+    - constant.numeric.decimal
+- source: '}'
+  scopes:
+    - punctuation.definition.end.bracket.curly
+- source: func
+  scopes:
+    - keyword.function
+- source: ReturnTwo
+  scopes:
+    - entity.name.function
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: int
+  scopes:
+    - storage.type.numeric
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: int
+  scopes:
+    - storage.type.numeric
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: '{'
+  scopes:
+    - punctuation.definition.begin.bracket.curly
+- source: return
+  scopes:
+    - keyword.control
+- source: '0'
+  scopes:
+    - constant.numeric.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '0'
+  scopes:
+    - constant.numeric.decimal
+- source: '}'
+  scopes:
+    - punctuation.definition.end.bracket.curly
+- source: func
+  scopes:
+    - keyword.function
+- source: ReturnNamed
+  scopes:
+    - entity.name.function
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: 'x '
+- source: int
+  scopes:
+    - storage.type.numeric
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: '{'
+  scopes:
+    - punctuation.definition.begin.bracket.curly
+- source: return
+  scopes:
+    - keyword.control
+- source: '0'
+  scopes:
+    - constant.numeric.decimal
+- source: '}'
+  scopes:
+    - punctuation.definition.end.bracket.curly
+- source: func
+  scopes:
+    - keyword.function
+- source: ReturnComplex
+  scopes:
+    - entity.name.function
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: 'q '
+- source: string
+  scopes:
+    - storage.type.string
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: ' x'
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: ' y '
+- source: int
+  scopes:
+    - storage.type.numeric
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: ' w '
+- source: byte
+  scopes:
+    - storage.type.byte
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: '{'
+  scopes:
+    - punctuation.definition.begin.bracket.curly
+- source: return
+  scopes:
+    - keyword.control
+- source: ' q'
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: ' x'
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: ' y'
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: ' w'
+- source: '}'
+  scopes:
+    - punctuation.definition.end.bracket.curly
+- source: //
+  scopesBegin:
+    - comment.line.double-slash
+  scopes:
+    - punctuation.definition.comment
+- source: ' Basic function declarations on a single line'
+  scopesEnd:
+    - comment.line.double-slash
+- source: func
+  scopes:
+    - keyword.function
+- source: SingleReturnOne
+  scopes:
+    - entity.name.function
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: int
+  scopes:
+    - storage.type.numeric
+- source: '{'
+  scopes:
+    - punctuation.definition.begin.bracket.curly
+- source: return
+  scopes:
+    - keyword.control
+- source: '0'
+  scopes:
+    - constant.numeric.decimal
+- source: '}'
+  scopes:
+    - punctuation.definition.end.bracket.curly
+- source: func
+  scopes:
+    - keyword.function
+- source: SingleReturnTwo
+  scopes:
+    - entity.name.function
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: int
+  scopes:
+    - storage.type.numeric
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: int
+  scopes:
+    - storage.type.numeric
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: '{'
+  scopes:
+    - punctuation.definition.begin.bracket.curly
+- source: return
+  scopes:
+    - keyword.control
+- source: '0'
+  scopes:
+    - constant.numeric.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '0'
+  scopes:
+    - constant.numeric.decimal
+- source: '}'
+  scopes:
+    - punctuation.definition.end.bracket.curly
+- source: func
+  scopes:
+    - keyword.function
+- source: SingleReturnNamed
+  scopes:
+    - entity.name.function
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: 'x '
+- source: int
+  scopes:
+    - storage.type.numeric
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: '{'
+  scopes:
+    - punctuation.definition.begin.bracket.curly
+- source: return
+  scopes:
+    - keyword.control
+- source: '0'
+  scopes:
+    - constant.numeric.decimal
+- source: '}'
+  scopes:
+    - punctuation.definition.end.bracket.curly
+- source: func
+  scopes:
+    - keyword.function
+- source: SingleReturnComplex
+  scopes:
+    - entity.name.function
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: 'q '
+- source: string
+  scopes:
+    - storage.type.string
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: ' x'
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: ' y '
+- source: int
+  scopes:
+    - storage.type.numeric
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: ' w '
+- source: byte
+  scopes:
+    - storage.type.byte
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: '{'
+  scopes:
+    - punctuation.definition.begin.bracket.curly
+- source: return
+  scopes:
+    - keyword.control
+- source: '}'
+  scopes:
+    - punctuation.definition.end.bracket.curly
+- source: //
+  scopesBegin:
+    - comment.line.double-slash
+  scopes:
+    - punctuation.definition.comment
+- source: ' Unicode'
+  scopesEnd:
+    - comment.line.double-slash
+- source: type
+  scopes:
+    - keyword.type
+- source: Ühik
+  scopes:
+    - entity.name.type
+- source: int
+  scopes:
+    - storage.type.numeric
+- source: func
+  scopes:
+    - keyword.function
+- source: 你好
+  scopes:
+    - entity.name.function
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: ä
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: ' ü Ühik'
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: '{'
+  scopes:
+    - punctuation.definition.begin.bracket.curly
+- source: return
+  scopes:
+    - keyword.control
+- source: '0'
+  scopes:
+    - constant.numeric.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '0'
+  scopes:
+    - constant.numeric.decimal
+- source: '}'
+  scopes:
+    - punctuation.definition.end.bracket.curly
+- source: //
+  scopesBegin:
+    - comment.line.double-slash
+  scopes:
+    - punctuation.definition.comment
+- source: ' Methods'
+- source: //
+  scopes:
+    - punctuation.definition.comment
+- source: ' Basic method declarations'
+  scopesEnd:
+    - comment.line.double-slash
+- source: func
+  scopes:
+    - keyword.function
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: 'ühik '
+- source: '*'
+  scopes:
+    - keyword.operator.address
+- source: Ühik
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: ReturnOne
+  scopes:
+    - entity.name.function
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: int
+  scopes:
+    - storage.type.numeric
+- source: '{'
+  scopes:
+    - punctuation.definition.begin.bracket.curly
+- source: return
+  scopes:
+    - keyword.control
+- source: '0'
+  scopes:
+    - constant.numeric.decimal
+- source: '}'
+  scopes:
+    - punctuation.definition.end.bracket.curly
+- source: func
+  scopes:
+    - keyword.function
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: 'ühik '
+- source: '*'
+  scopes:
+    - keyword.operator.address
+- source: Ühik
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: ReturnTwo
+  scopes:
+    - entity.name.function
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: int
+  scopes:
+    - storage.type.numeric
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: int
+  scopes:
+    - storage.type.numeric
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: '{'
+  scopes:
+    - punctuation.definition.begin.bracket.curly
+- source: return
+  scopes:
+    - keyword.control
+- source: '0'
+  scopes:
+    - constant.numeric.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '0'
+  scopes:
+    - constant.numeric.decimal
+- source: '}'
+  scopes:
+    - punctuation.definition.end.bracket.curly
+- source: func
+  scopes:
+    - keyword.function
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: 'ühik '
+- source: '*'
+  scopes:
+    - keyword.operator.address
+- source: Ühik
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: ReturnNamed
+  scopes:
+    - entity.name.function
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: 'x '
+- source: int
+  scopes:
+    - storage.type.numeric
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: '{'
+  scopes:
+    - punctuation.definition.begin.bracket.curly
+- source: return
+  scopes:
+    - keyword.control
+- source: '0'
+  scopes:
+    - constant.numeric.decimal
+- source: '}'
+  scopes:
+    - punctuation.definition.end.bracket.curly
+- source: func
+  scopes:
+    - keyword.function
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: 'ühik '
+- source: '*'
+  scopes:
+    - keyword.operator.address
+- source: Ühik
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: ReturnComplex
+  scopes:
+    - entity.name.function
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: 'q '
+- source: string
+  scopes:
+    - storage.type.string
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: ' x'
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: ' y '
+- source: int
+  scopes:
+    - storage.type.numeric
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: ' w '
+- source: byte
+  scopes:
+    - storage.type.byte
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: '{'
+  scopes:
+    - punctuation.definition.begin.bracket.curly
+- source: return
+  scopes:
+    - keyword.control
+- source: '}'
+  scopes:
+    - punctuation.definition.end.bracket.curly
+- source: //
+  scopesBegin:
+    - comment.line.double-slash
+  scopes:
+    - punctuation.definition.comment
+- source: ' Basic method declarations on a single line'
+  scopesEnd:
+    - comment.line.double-slash
+- source: func
+  scopes:
+    - keyword.function
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: 'ühik '
+- source: '*'
+  scopes:
+    - keyword.operator.address
+- source: Ühik
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: SingleReturnOne
+  scopes:
+    - entity.name.function
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: int
+  scopes:
+    - storage.type.numeric
+- source: '{'
+  scopes:
+    - punctuation.definition.begin.bracket.curly
+- source: return
+  scopes:
+    - keyword.control
+- source: '0'
+  scopes:
+    - constant.numeric.decimal
+- source: '}'
+  scopes:
+    - punctuation.definition.end.bracket.curly
+- source: func
+  scopes:
+    - keyword.function
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: 'ühik '
+- source: '*'
+  scopes:
+    - keyword.operator.address
+- source: Ühik
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: SingleReturnTwo
+  scopes:
+    - entity.name.function
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: int
+  scopes:
+    - storage.type.numeric
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: int
+  scopes:
+    - storage.type.numeric
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: '{'
+  scopes:
+    - punctuation.definition.begin.bracket.curly
+- source: return
+  scopes:
+    - keyword.control
+- source: '0'
+  scopes:
+    - constant.numeric.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '0'
+  scopes:
+    - constant.numeric.decimal
+- source: '}'
+  scopes:
+    - punctuation.definition.end.bracket.curly
+- source: func
+  scopes:
+    - keyword.function
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: 'ühik '
+- source: '*'
+  scopes:
+    - keyword.operator.address
+- source: Ühik
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: SingleReturnNamed
+  scopes:
+    - entity.name.function
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: 'x '
+- source: int
+  scopes:
+    - storage.type.numeric
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: '{'
+  scopes:
+    - punctuation.definition.begin.bracket.curly
+- source: return
+  scopes:
+    - keyword.control
+- source: '0'
+  scopes:
+    - constant.numeric.decimal
+- source: '}'
+  scopes:
+    - punctuation.definition.end.bracket.curly
+- source: func
+  scopes:
+    - keyword.function
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: 'ühik '
+- source: '*'
+  scopes:
+    - keyword.operator.address
+- source: Ühik
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: SingleReturnComplex
+  scopes:
+    - entity.name.function
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: 'q '
+- source: string
+  scopes:
+    - storage.type.string
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: ' x'
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: ' y '
+- source: int
+  scopes:
+    - storage.type.numeric
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: ' w '
+- source: byte
+  scopes:
+    - storage.type.byte
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: '{'
+  scopes:
+    - punctuation.definition.begin.bracket.curly
+- source: return
+  scopes:
+    - keyword.control
+- source: '}'
+  scopes:
+    - punctuation.definition.end.bracket.curly
+- source: //
+  scopesBegin:
+    - comment.line.double-slash
+  scopes:
+    - punctuation.definition.comment
+- source: ' No receiver method declarations'
+  scopesEnd:
+    - comment.line.double-slash
+- source: func
+  scopes:
+    - keyword.function
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: '*'
+  scopes:
+    - keyword.operator.address
+- source: Ühik
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: NoReceive
+  scopes:
+    - entity.name.function
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: '{'
+  scopes:
+    - punctuation.definition.begin.bracket.curly
+- source: '}'
+  scopes:
+    - punctuation.definition.end.bracket.curly

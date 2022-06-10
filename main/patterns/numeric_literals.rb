@@ -22,7 +22,7 @@ def generateNumericLiteral()
     separator = "_"
     valid_single_character = /(?:[0-9a-zA-Z_\.])/
     valid_after_exponent = lookBehindFor(/[eEpP]/).then(/[+-]/)
-    valid_character = valid_single_character.or(valid_after_exponent)
+    valid_character = Pattern.new(valid_single_character).or(valid_after_exponent)
     end_pattern = @end_of_line
     
     number_separator_pattern = Pattern.new(
@@ -31,45 +31,45 @@ def generateNumericLiteral()
     )
 
     hex_digits = Pattern.new(
-        match: /[0-9a-fA-F]/.zeroOrMoreOf(/[0-9a-fA-F]/.or(number_separator_pattern)),
+        match: Pattern.new(/[0-9a-fA-F]/).zeroOrMoreOf(Pattern.new(/[0-9a-fA-F]/).or(number_separator_pattern)),
         tag_as: "constant.numeric.hexadecimal",
         includes: [ number_separator_pattern ],
     )
     decimal_digits = Pattern.new(
-        match: /[0-9]/.zeroOrMoreOf(/[0-9]/.or(number_separator_pattern)),
+        match: Pattern.new(/[0-9]/).zeroOrMoreOf(Pattern.new(/[0-9]/).or(number_separator_pattern)),
         tag_as: "constant.numeric.decimal",
         includes: [ number_separator_pattern ],
     )
     octal_digits = Pattern.new(
-        match: oneOrMoreOf(/[0-7]/.or(number_separator_pattern)),
+        match: oneOrMoreOf(/[0-7]/).or(number_separator_pattern),
         tag_as: "constant.numeric.octal",
         includes: [ number_separator_pattern ],
     )
     binary_digits = Pattern.new(
-        match: /[01]/.zeroOrMoreOf(/[01]/.or(number_separator_pattern)),
+        match: Pattern.new(/[01]/).zeroOrMoreOf(Pattern.new(/[01]/).or(number_separator_pattern)),
         tag_as: "constant.numeric.binary",
         includes: [ number_separator_pattern ],
     )
 
     hex_prefix = Pattern.new(
-        match: /\G/.then(/0[xX]/),
+        match: Pattern.new(/\G/).then(/0[xX]/),
         tag_as: "keyword.other.unit.hexadecimal",
     )
     octal_prefix = Pattern.new(
         # The anchor \G matches at the position where the previous match ended.
-        match: /\G/.then(/0/).maybe(/[oO]/),
+        match: Pattern.new(/\G/).then(/0/).maybe(/[oO]/),
         tag_as: "keyword.other.unit.octal",
     )
     binary_prefix = Pattern.new(
-        match: /\G/.then(/0[bB]/),
+        match: Pattern.new(/\G/).then(/0[bB]/),
         tag_as: "keyword.other.unit.binary",
     )
     decimal_prefix = Pattern.new(
-        match: /\G/.lookAheadFor(/[0-9.]/).lookAheadToAvoid(/0[xXbBoO]/),
+        match: Pattern.new(/\G/).lookAheadFor(/[0-9.]/).lookAheadToAvoid(/0[xXbBoO]/),
     )
 
     imaginary_suffix = Pattern.new(
-        match: /i/.lookAheadToAvoid(/\w/),
+        match: Pattern.new(/i/).lookAheadToAvoid(/\w/),
         tag_as:"keyword.other.unit.imaginary",
     )
 
@@ -84,7 +84,7 @@ def generateNumericLiteral()
             match: /\-/,
             tag_as: "keyword.operator.minus.exponent.hexadecimal",
         ).then(
-            match: decimal_digits.without_numbered_capture_groups,
+            match: decimal_digits,
             tag_as: "constant.numeric.exponent.hexadecimal",
             includes: [ number_separator_pattern ]
         ),
@@ -100,19 +100,19 @@ def generateNumericLiteral()
             match: /\-/,
             tag_as: "keyword.operator.minus.exponent.decimal",
         ).then(
-            match: decimal_digits.without_numbered_capture_groups,
+            match: decimal_digits,
             tag_as: "constant.numeric.exponent.decimal",
             includes: [ number_separator_pattern ]
         )
     )
     hex_point = Pattern.new(
         # lookBehind/Ahead because there needs to be a hex digit on at least one side
-        match: lookBehindFor(/[0-9a-fA-F]/).then(/\./).or(/\./.lookAheadFor(/[0-9a-fA-F]/)),
+        match: lookBehindFor(/[0-9a-fA-F]/).then(/\./).or(Pattern.new(/\./).lookAheadFor(/[0-9a-fA-F]/)),
         tag_as: "constant.numeric.hexadecimal",
     )
     decimal_point = Pattern.new(
         # lookBehind/Ahead because there needs to be a decimal digit on at least one side
-        match: lookBehindFor(/[0-9]/).then(/\./).or(/\./.lookAheadFor(/[0-9]/)),
+        match: lookBehindFor(/[0-9]/).then(/\./).or(Pattern.new(/\./).lookAheadFor(/[0-9]/)),
         tag_as: "constant.numeric.decimal.point",
     )
 
@@ -156,7 +156,7 @@ def generateNumericLiteral()
     #                     "." decimal_digits [ decimal_exponent ] .
     decimal_float_lit1 = decimal_prefix.then(decimal_digits).then(decimal_point).maybe(decimal_digits).maybe(decimal_exponent).maybe(imaginary_suffix).then(decimal_ending)
     decimal_float_lit2 = decimal_prefix.then(decimal_digits)                                          .then( decimal_exponent).maybe(imaginary_suffix).then(decimal_ending)
-    decimal_float_lit3 =                                /\G/.then(decimal_point).then( decimal_digits).maybe(decimal_exponent).maybe(imaginary_suffix).then(decimal_ending)               
+    decimal_float_lit3 =                   Pattern.new(/\G/).then(decimal_point).then( decimal_digits).maybe(decimal_exponent).maybe(imaginary_suffix).then(decimal_ending)
 
     # hex_float_lit     = "0" ( "x" | "X" ) hex_mantissa hex_exponent .
     # hex_mantissa      = [ "_" ] hex_digits "." [ hex_digits ] |
@@ -193,7 +193,7 @@ def generateNumericLiteral()
     # first a range (the whole number) is found
     # then, after the range is found, it starts to figure out what kind of number/constant it is
     # it does this by matching one of the includes
-    grammar[:numeric_literals] = Pattern.new(
+    return Pattern.new(
         match: lookBehindToAvoid(/\w/).then(/\.?\d/).zeroOrMoreOf(valid_character),
         includes: [
             # NOTE: this PatternRange.new should be redundant, it makes no sense
@@ -213,7 +213,7 @@ def generateNumericLiteral()
 
                     # invalid
                     Pattern.new(
-                        match: oneOrMoreOf(valid_single_character.or(valid_after_exponent)),
+                        match: oneOrMoreOf(Pattern.new(valid_single_character).or(valid_after_exponent)),
                         tag_as: "invalid.illegal.constant.numeric"
                     ),
                 ]

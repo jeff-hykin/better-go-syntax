@@ -1,0 +1,159 @@
+- source: package
+  scopes:
+    - keyword.package
+- source: main
+  scopes:
+    - entity.name.package
+- source: import
+  scopes:
+    - keyword.import
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.begin
+- source: fmt
+  scopes:
+    - entity.name.import
+- source: '"'
+  scopes:
+    - punctuation.definition.string.end
+  scopesEnd:
+    - string.quoted.double
+- source: func
+  scopes:
+    - keyword.function
+- source: vals
+  scopes:
+    - entity.name.function
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: int
+  scopes:
+    - storage.type.numeric
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: int
+  scopes:
+    - storage.type.numeric
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: '{'
+  scopes:
+    - punctuation.definition.begin.bracket.curly
+- source: return
+  scopes:
+    - keyword.control
+- source: '3'
+  scopes:
+    - constant.numeric.decimal
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: '7'
+  scopes:
+    - constant.numeric.decimal
+- source: '}'
+  scopes:
+    - punctuation.definition.end.bracket.curly
+- source: func
+  scopes:
+    - keyword.function
+- source: main
+  scopes:
+    - entity.name.function
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: '{'
+  scopes:
+    - punctuation.definition.begin.bracket.curly
+- source: a
+  scopes:
+    - variable.other.assignment
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: b
+  scopes:
+    - variable.other.assignment
+- source: ':='
+  scopes:
+    - keyword.operator.assignment
+- source: ' vals'
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: '    fmt'
+- source: .
+  scopes:
+    - punctuation.other.period
+- source: Println
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: a
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: '    fmt'
+- source: .
+  scopes:
+    - punctuation.other.period
+- source: Println
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: b
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: _
+  scopes:
+    - variable.other.assignment
+- source: ','
+  scopes:
+    - punctuation.other.comma
+- source: c
+  scopes:
+    - variable.other.assignment
+- source: ':='
+  scopes:
+    - keyword.operator.assignment
+- source: ' vals'
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: '    fmt'
+- source: .
+  scopes:
+    - punctuation.other.period
+- source: Println
+- source: (
+  scopes:
+    - punctuation.definition.begin.bracket.round
+- source: c
+- source: )
+  scopes:
+    - punctuation.definition.end.bracket.round
+- source: '}'
+  scopes:
+    - punctuation.definition.end.bracket.curly

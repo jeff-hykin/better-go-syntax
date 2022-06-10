@@ -7,6 +7,9 @@
     "version": "https://github.com/atom/language-go/commit/b6fd68f74efa109679e31fe6f4a41ac105262d0e",
     "name": "Go",
     "scopeName": "source.go",
+    "fileTypes": [
+        "go"
+    ],
     "comment": "Go language",
     "patterns":     [
         {
