@@ -1,4 +1,24 @@
-def go_numeric_constant()
+# frozen_string_literal: true
+require 'ruby_grammar_builder'
+require 'walk_up'
+require_relative walk_up_until("paths.rb")
+
+
+
+export = Grammar.new_exportable_grammar
+export.external_repos = [ # patterns that are imported
+]
+export.exports = [ # patterns that are exported
+    :numeric_literals,
+]
+
+
+
+
+# 
+# bet you didn't think number literals were this complicated lol
+# 
+def generateNumericLiteral()
     separator = "_"
     valid_single_character = /(?:[0-9a-zA-Z_\.])/
     valid_after_exponent = lookBehindFor(/[eEpP]/).then(/[+-]/)
@@ -145,7 +165,7 @@ def go_numeric_constant()
     hex_float_lit1 = hex_prefix.maybe(/#{separator}/).then(hex_digits).then(hex_point).maybe(hex_digits).then(hex_exponent).maybe(imaginary_suffix).then(hex_ending)
     hex_float_lit2 = hex_prefix.maybe(/#{separator}/).then(hex_digits)                                  .then(hex_exponent).maybe(imaginary_suffix).then(hex_ending)
     hex_float_lit3 = hex_prefix                                       .then(hex_point).then( hex_digits).then(hex_exponent).maybe(imaginary_suffix).then(hex_ending)
-   
+
     float_lit = Pattern.new(
         match: decimal_float_lit1.or(decimal_float_lit2).or(decimal_float_lit3).or(hex_float_lit1).or(hex_float_lit2).or(hex_float_lit3),
         should_not_fully_match: [ "0x.p1", "1p-2", "0x1.6e-2", "1_.5", "1._5", "1.5_e1", "1.5e_1", "1.5e1_", "0x15e-2" ],
@@ -173,7 +193,7 @@ def go_numeric_constant()
     # first a range (the whole number) is found
     # then, after the range is found, it starts to figure out what kind of number/constant it is
     # it does this by matching one of the includes
-    return Pattern.new(
+    grammar[:numeric_literals] = Pattern.new(
         match: lookBehindToAvoid(/\w/).then(/\.?\d/).zeroOrMoreOf(valid_character),
         includes: [
             # NOTE: this PatternRange.new should be redundant, it makes no sense
@@ -202,3 +222,5 @@ def go_numeric_constant()
     )
 end
 
+# create/export the numeric literal
+export[:numeric_literals] = generateNumericLiteral()
