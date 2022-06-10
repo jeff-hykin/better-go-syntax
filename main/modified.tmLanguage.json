@@ -37,9 +37,6 @@
             "include": "#function_declarations"
         },
         {
-            "include": "#functions"
-        },
-        {
             "include": "#numeric_literals"
         },
         {
@@ -56,9 +53,6 @@
         },
         {
             "include": "#anonymous_pattern_4"
-        },
-        {
-            "include": "#anonymous_pattern_5"
         },
         {
             "include": "#anonymous_pattern_6"
@@ -199,27 +193,6 @@
                 }
             }
         },
-        "functions": {
-            "comment": "Functions",
-            "match": "(\\bfunc\\b)|(\\w+)(?=\\()",
-            "captures": {
-                "1": {
-                    "name": "keyword.function.go"
-                },
-                "2": {
-                    "patterns": [
-                        {
-                            "match": "\\d\\w*",
-                            "name": "invalid.illegal.identifier.go"
-                        },
-                        {
-                            "match": "\\w+",
-                            "name": "support.function.go"
-                        }
-                    ]
-                }
-            }
-        },
         "language_constants": {
             "comment": "Language constants",
             "match": "\\b(true|false|nil|iota)\\b",
@@ -295,35 +268,6 @@
                     "include": "#variables"
                 }
             ]
-        },
-        "anonymous_pattern_5": {
-            "match": "(?<!var)\\s*(\\w+(?:\\.\\w+)*(?>,\\s*\\w+(?:\\.\\w+)*)*)(?=\\s*=(?!=))",
-            "captures": {
-                "1": {
-                    "patterns": [
-                        {
-                            "match": "\\d\\w*",
-                            "name": "invalid.illegal.identifier.go"
-                        },
-                        {
-                            "match": "\\w+(?:\\.\\w+)*",
-                            "name": "variable.other.assignment.go",
-                            "captures": {
-                                "0": {
-                                    "patterns": [
-                                        {
-                                            "include": "#delimiters"
-                                        }
-                                    ]
-                                }
-                            }
-                        },
-                        {
-                            "include": "#delimiters"
-                        }
-                    ]
-                }
-            }
         },
         "anonymous_pattern_6": {
             "match": "\\b\\w+(?:,\\s*\\w+)*(?=\\s*:=)",
