@@ -10,6 +10,14 @@ require_relative './tokens.rb'
 # 
 # 
 grammar = Grammar.fromTmLanguage(__dir__+"/modified.tmLanguage.json")
+# grammar = Grammar.new(
+#     name: "go (simplified)",
+#     scope_name: "source.go_simplified",
+#     fileTypes: [
+#         "go",
+#     ],
+#     version: "",
+# )
 
 # 
 #
