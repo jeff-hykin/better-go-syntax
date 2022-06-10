@@ -3,7 +3,7 @@
   "displayName": "Better Go Syntax",
   "description": "A syntax improvement for go lang",
   "icon": "icon.png",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "scripts": {
     "build": "ruby source/generate.rb",
     "publish": "npm run build && vsce publish",
@@ -27,13 +27,14 @@
   "contributes": {
     "languages": [
       {
-        "id": "go (simplified)",
+        "id": "go",
         "aliases": [
+          "go lang",
           "Go (simplified)",
           "go (simplified)"
         ],
         "extensions": [
-          ".go_simplified"
+          ".go"
         ],
         "configuration": "./language-configuration.json"
       }
