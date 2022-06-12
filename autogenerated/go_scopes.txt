@@ -62,7 +62,6 @@ punctuation.definition.comment.go
 punctuation.definition.end.bracket.curly.go
 punctuation.definition.end.bracket.round.go
 punctuation.definition.imports.begin.bracket.round.go
-punctuation.definition.imports.end.bracket.round.go
 punctuation.definition.string.begin.go
 punctuation.definition.string.end.go
 punctuation.definition.variables.begin.bracket.round.go

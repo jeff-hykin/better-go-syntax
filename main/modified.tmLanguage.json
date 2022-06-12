@@ -52,9 +52,6 @@
             "include": "#anonymous_pattern_2"
         },
         {
-            "include": "#anonymous_pattern_3"
-        },
-        {
             "include": "#anonymous_pattern_4"
         },
         {
@@ -244,20 +241,6 @@
                 }
             ]
         },
-        "anonymous_pattern_3": {
-            "begin": "\\b(import)\\s+",
-            "beginCaptures": {
-                "1": {
-                    "name": "keyword.import.go"
-                }
-            },
-            "end": "(?!\\G)",
-            "patterns": [
-                {
-                    "include": "#imports"
-                }
-            ]
-        },
         "anonymous_pattern_4": {
             "begin": "\\b(var)\\s+",
             "beginCaptures": {
@@ -375,52 +358,6 @@
                 {
                     "match": ":(?!=)",
                     "name": "punctuation.other.colon.go"
-                }
-            ]
-        },
-        "imports": {
-            "patterns": [
-                {
-                    "match": "((?!\\s+\")[^\\s]*)?\\s*((\")([^\"]*)(\"))",
-                    "captures": {
-                        "1": {
-                            "name": "entity.alias.import.go"
-                        },
-                        "2": {
-                            "name": "string.quoted.double.go"
-                        },
-                        "3": {
-                            "name": "punctuation.definition.string.begin.go"
-                        },
-                        "4": {
-                            "name": "entity.name.import.go"
-                        },
-                        "5": {
-                            "name": "punctuation.definition.string.end.go"
-                        }
-                    }
-                },
-                {
-                    "begin": "\\(",
-                    "beginCaptures": {
-                        "0": {
-                            "name": "punctuation.definition.imports.begin.bracket.round.go"
-                        }
-                    },
-                    "end": "\\)",
-                    "endCaptures": {
-                        "0": {
-                            "name": "punctuation.definition.imports.end.bracket.round.go"
-                        }
-                    },
-                    "patterns": [
-                        {
-                            "include": "#comments"
-                        },
-                        {
-                            "include": "#imports"
-                        }
-                    ]
                 }
             ]
         },
