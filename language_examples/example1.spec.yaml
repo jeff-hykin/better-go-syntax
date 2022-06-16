@@ -99,30 +99,38 @@
 - source: )
   scopes:
     - punctuation.definition.end.bracket.round
-- source: '    fmt'
+- source: fmt
+  scopes:
+    - variable.other.object.access
 - source: .
   scopes:
-    - punctuation.other.period
+    - punctuation.separator.dot-access
 - source: Println
+  scopes:
+    - entity.name.function.member
 - source: (
   scopes:
-    - punctuation.definition.begin.bracket.round
+    - punctuation.section.arguments.bracket.round.function.member
 - source: a
 - source: )
   scopes:
-    - punctuation.definition.end.bracket.round
-- source: '    fmt'
+    - punctuation.section.arguments.bracket.round.function.member
+- source: fmt
+  scopes:
+    - variable.other.object.access
 - source: .
   scopes:
-    - punctuation.other.period
+    - punctuation.separator.dot-access
 - source: Println
+  scopes:
+    - entity.name.function.member
 - source: (
   scopes:
-    - punctuation.definition.begin.bracket.round
+    - punctuation.section.arguments.bracket.round.function.member
 - source: b
 - source: )
   scopes:
-    - punctuation.definition.end.bracket.round
+    - punctuation.section.arguments.bracket.round.function.member
 - source: _
   scopes:
     - variable.other.assignment
@@ -142,18 +150,22 @@
 - source: )
   scopes:
     - punctuation.definition.end.bracket.round
-- source: '    fmt'
+- source: fmt
+  scopes:
+    - variable.other.object.access
 - source: .
   scopes:
-    - punctuation.other.period
+    - punctuation.separator.dot-access
 - source: Println
+  scopes:
+    - entity.name.function.member
 - source: (
   scopes:
-    - punctuation.definition.begin.bracket.round
+    - punctuation.section.arguments.bracket.round.function.member
 - source: c
 - source: )
   scopes:
-    - punctuation.definition.end.bracket.round
+    - punctuation.section.arguments.bracket.round.function.member
 - source: '}'
   scopes:
     - punctuation.definition.end.bracket.curly

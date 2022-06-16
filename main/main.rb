@@ -26,6 +26,8 @@ grammar = Grammar.fromTmLanguage(__dir__+"/modified.tmLanguage.json")
         :syntax_error_numeric_literals,
         :built_in_functions,
         :function_declarations,
+        :method_access,
+        :member_access,
         :functions,
         :numeric_literals,
         :language_constants,
@@ -71,6 +73,7 @@ grammar = Grammar.fromTmLanguage(__dir__+"/modified.tmLanguage.json")
 # imports
 # 
     grammar.import(PathFor[:pattern]["numeric_literals"])
+    grammar.import(PathFor[:pattern]["member_access"])
 # 
 # basic patterns
 # 

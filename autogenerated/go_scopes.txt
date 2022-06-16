@@ -13,6 +13,7 @@ constant.other.placeholder.go
 constant.other.rune.go
 entity.alias.import.go
 entity.name.function.go
+entity.name.function.member.go
 entity.name.import.go
 entity.name.package.go
 entity.name.type.go
@@ -69,7 +70,9 @@ punctuation.definition.variables.end.bracket.round.go
 punctuation.other.colon.go
 punctuation.other.comma.go
 punctuation.other.period.go
+punctuation.section.arguments.bracket.round.function.member.go
 punctuation.separator.constant.numeric.go
+punctuation.separator.dot-access.go
 punctuation.terminator.go
 storage.type.boolean.go
 storage.type.byte.go
@@ -84,3 +87,6 @@ string.quoted.rune.go
 support.function.builtin.go
 variable.other.assignment.go
 variable.other.declaration.go
+variable.other.object.access.go
+variable.other.object.property.go
+variable.other.property.go
